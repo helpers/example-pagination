@@ -1,0 +1,16 @@
+<!-- paginate -->
+<ul class="pagination pagination-lg">
+{{#paginate pagination type="previous"}}
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="{{relative page.dest prev.dest}}">&laquo;</a></li>
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="?p={{n}}">&lsaquo;</a></li>
+{{/paginate}}
+{{#paginate pagination type="middle" limit="7"}}
+  <li{{#if active}} class="active"{{/if}}><a href="?p={{n}}">{{n}}</a></li>
+  <li{{#if active}} class="active"{{/if}}><a href="?p={{n}}">{{n}}</a></li>
+{{/paginate}}
+{{#paginate pagination type="next"}}
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="?p={{n}}">&rsaquo;</a></li>
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="{{relative page.dest next.dest}}">&raquo;</a></li>
+{{/paginate}}
+</ul>
+<!-- /paginate -->

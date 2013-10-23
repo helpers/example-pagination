@@ -1,0 +1,153 @@
+---
+title: Home
+---
+
+<!-- paginate -->
+<ul class="pagination pagination-lg">
+{{#paginate pagination type="previous"}}
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="{{relative page.dest prev.dest}}">&laquo;</a></li>
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="?p={{n}}">&lsaquo;</a></li>
+{{/paginate}}
+{{#paginate pagination type="middle" limit="7"}}
+  <li{{#if active}} class="active"{{/if}}><a href="?p={{n}}">{{n}}</a></li>
+  <li{{#if active}} class="active"{{/if}}><a href="?p={{n}}">{{n}}</a></li>
+{{/paginate}}
+{{#paginate pagination type="next"}}
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="?p={{n}}">&rsaquo;</a></li>
+  <li{{#if disabled}} class="disabled"{{/if}}><a href="{{relative page.dest next.dest}}">&raquo;</a></li>
+{{/paginate}}
+</ul>
+<!-- /paginate -->
+
+
+<!-- pagination -->
+{{#pagination pagination 4}}
+<ul class="pagination pagination-lg">
+  {{#unless firstPage}}
+    <li><a href="#">&larr; Previous</a></li>
+  {{/unless}}
+  {{#each pages}}
+    {{#if isCurrent}}
+      <li><a href="{{relative page.dest prev.dest}}">{{page.basename}}</a></li>
+    {{/if}}
+    {{#unless isCurrent}}
+      <li><a href="#">{{page.basename}}</a></li>
+    {{/unless}}
+  {{/each}}
+  {{#unless lastPage}}
+    <li><a href="{{relative page.dest next.dest}}">Next &rarr;</a></li>
+  {{/unless}}
+</ul>
+{{/pagination}}
+<!-- /pagination -->
+
+
+<!-- pager -->
+{{pager pagination}}
+<!-- /pager -->
+
+
+<!-- start -->
+{{#compose "posts/*.md"}}
+<article class="post post-item">
+  <a class="pull-right" href="#">
+    <img class="post-object" data-src="{{assets}}/js/holder.js/72x72" alt="Generic placeholder image" src="data:image/png;base64,">
+  </a>
+  <div class="post-body">
+    <a href="#"><h2 class="post-heading">Post heading</h2></a>
+    {{{@content}}}
+  </div>
+  <div class="post-footer">
+    <a class="text-muted" href="#">Read more...</a>
+  </div>
+</article>
+{{/compose}}
+<!-- finish -->
+
+<!-- Post -->
+<article class="post post-item">
+  <a class="pull-right" href="#">
+    <img class="post-object" data-src="{{assets}}/js/holder.js/72x72" alt="Generic placeholder image" src="data:image/png;base64,">
+  </a>
+  <div class="post-body">
+    <a href="#"><h2 class="post-heading">{{title}}</h2></a>
+    {{lorem ipsum.sentence}}
+  </div>
+  <div class="post-footer">
+    <a class="text-muted" href="#">Read more</a>
+  </div>
+</article>
+
+<!-- Post -->
+<article class="post post-item">
+  <a class="pull-right" href="#">
+    <img class="post-object" data-src="{{assets}}/js/holder.js/72x72" alt="Generic placeholder image" src="data:image/png;base64,">
+  </a>
+  <div class="post-body">
+    <a href="#"><h2 class="post-heading">{{title}}</h2></a>
+    {{lorem ipsum.sentence}}
+  </div>
+  <div class="post-footer">
+    <a class="text-muted" href="#">Read more</a>
+  </div>
+</article>
+
+<!-- Post -->
+<article class="post post-item">
+  <a class="pull-right" href="#">
+    <img class="post-object" data-src="{{assets}}/js/holder.js/72x72" alt="Generic placeholder image" src="data:image/png;base64,">
+  </a>
+  <div class="post-body">
+    <a href="#"><h2 class="post-heading">{{title}}</h2></a>
+    {{lorem ipsum.sentence}}
+  </div>
+  <div class="post-footer">
+    <a class="text-muted" href="#">Read more</a>
+  </div>
+</article>
+
+
+<!-- Pager -->
+<ul class="pager">
+  <li class="pager-heading">LATEST</li>
+  <li class="next"><a href="#">More &rarr;</a></li>
+</ul>
+
+<!-- Post -->
+<article class="post post-item">
+  <a class="pull-right" href="#">
+    <img class="post-object" data-src="{{assets}}/js/holder.js/72x72" alt="Generic placeholder image" src="data:image/png;base64,">
+  </a>
+  <div class="post-body">
+    <a href="#"><h3 class="post-heading">{{title}}</h3></a>
+  </div>
+  <div class="post-footer">
+    <a class="text-muted" href="#">Read more</a>
+  </div>
+</article>
+
+<!-- Post -->
+<article class="post post-item">
+  <a class="pull-right" href="#">
+    <img class="post-object" data-src="{{assets}}/js/holder.js/72x72" alt="Generic placeholder image" src="data:image/png;base64,">
+  </a>
+  <div class="post-body">
+    <a href="#"><h3 class="post-heading">{{title}}</h3></a>
+  </div>
+  <div class="post-footer">
+    <a class="text-muted" href="#">Read more</a>
+  </div>
+</article>
+
+<!-- Post -->
+<article class="post post-item">
+  <a class="pull-right" href="#">
+    <img class="post-object" data-src="{{assets}}/js/holder.js/72x72" alt="Generic placeholder image" src="data:image/png;base64,">
+  </a>
+  <div class="post-body">
+    <a href="#"><h3 class="post-heading">{{title}}</h3></a>
+  </div>
+  <div class="post-footer">
+    <a class="text-muted" href="#">Read more</a>
+  </div>
+</article>

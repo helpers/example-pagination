@@ -1,0 +1,18 @@
+{
+  "demo": {
+    "title": "Example 060: Assemble Pagination",
+    "description": "Page of pages.",
+    "component": "pagination",
+    "modifier": "pagination-justified",
+    "authors": [
+      {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert/"
+      },
+      {
+        "name": "Brian Woodward",
+        "url": "https://github.com/doowb/"
+      }
+    ]
+  }
+}

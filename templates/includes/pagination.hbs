@@ -1,0 +1,20 @@
+{{#pagination pagination.currentPage pagination.totalPages 4}}
+<div class="pagination">
+  {{#unless firstPage}}
+    <a href="#">&larr; Previous</a>
+  {{/unless}}
+
+  {{#each pages}}
+    {{#if isCurrent}}
+      <a href="{{relative page.dest prev.dest}}">{{page.basename}}</a>
+    {{/if}}
+    {{#unless isCurrent}}
+      <a href="#">{{page.basename}}</a>
+    {{/unless}}
+  {{/each}}
+
+  {{#unless lastPage}}
+    <a href="{{relative page.dest next.dest}}">Next &rarr;</a>
+  {{/unless}}
+</div>
+{{/pagination}}

@@ -1,6 +1,6 @@
 /**
- * Handlebars Helper: {{pkg}}
- * Copyright (c) 2013 Jon Schlinkert
+ * Handlebars Helpers: Metadata
+ * Copyright (c) 2013 lesscss.org
  * Licensed under the MIT License (MIT).
  */
 
@@ -9,7 +9,7 @@ var path   = require('path');
 var fs     = require('fs');
 
 // node_modules
-var _      = require('grunt').util._;
+var _      = require('lodash');
 
 // package.json config object
 var config = require(path.resolve(process.cwd(), 'package.json'));
@@ -24,8 +24,6 @@ module.exports.register = function (Handlebars, options) {
    * Return a property from package.json
    * @param  {String} key
    * @return {String}
-   * @example
-   *  v{{pkg 'version'}} => v0.1.0
    */
   exports.pkg = function(key) {
     options = _.defaults(options, config);

@@ -26,7 +26,7 @@ module.exports.register = function (Handlebars, options) {
    * @return {String}         The pager, HTML.
    */
   exports.paginate = function (context, options) {
-    grunt.file.write('paginate.json', JSON.stringify(context, null, 2));
+    // grunt.file.write('paginate.json', JSON.stringify(context, null, 2));
     // console.log(context);
     context = _.extend({}, context, options);
     var type = options.hash.type || 'middle';

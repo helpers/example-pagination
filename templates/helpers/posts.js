@@ -9,7 +9,8 @@ var path = require('path');
 var fs   = require('fs');
 
 // node_modules
-var _    = require('lodash');
+var grunt   = require('grunt');
+var _       = grunt.util._;
 
 
 // Export helpers
@@ -17,13 +18,17 @@ module.exports.register = function (Handlebars, options) {
 
   'use strict';
 
+  var opts = options;
+
   /**
    * {{posts}}
    * Render a list of posts
    */
-  exports.posts = function(context) {
-    context = _.extend({}, context, this);
-    return new Handlebars.SafeString(Handlebars.compile(this.page)(context));
+  exports.include = function(options) {
+    var source = options.fn(this);
+    var template = Handlebars.compile(source);
+    var context = _.extend({}, this, opts, options.hash);
+    return new Handlebars.SafeString(template(context));
   };
 
 
@@ -33,3 +38,6 @@ module.exports.register = function (Handlebars, options) {
     }
   }
 };
+
+
+

@@ -9,26 +9,43 @@
 
 module.exports = function(grunt) {
 
+  var pretty = require('pretty');
 
   // Project configuration.
   grunt.initConfig({
 
+    site: grunt.file.readYAML('_config.yml'),
+
     assemble: {
       options: {
+        site: '<%= site %>',
+        plugins: ['assemble-contrib-contextual'],
+        contextual: {
+          dest: 'tmp/'
+        },
         flatten: true,
         assets: '_gh_pages/assets',
         // plugins: ['permalinks'],
-        helpers: ['templates/helpers/*.js', 'helper-prettify', 'helper-compose'],
+        helpers: ['templates/helpers/*.js', 'handlebars-helper-lorem'],
         partials: ['templates/includes/*.hbs'],
-        layoutdir: 'templates/layouts',
-        layout: 'default.hbs',
+        layout: 'templates/layouts/default.hbs',
+        data: ['data/**/*.json'],
+        postprocess: function(src) {
+          return pretty(src);
+        }
+      },
+      pages: {
+        files: {'_gh_pages/': ['example-000/alert-*.hbs', 'templates/*.hbs']},
+        options: {
+          styles: 'example-000/styles.css',
+          data: ['example-000/*.json']
+        }
       },
       example000: {
-        files: {'_gh_pages/example-000/': ['example-000/index.hbs']},
+        files: {'_gh_pages/example-000/': ['example-000/alert-*.hbs']},
         options: {
-          partials: 'example-000/pagination.hbs',
           styles: 'example-000/styles.css',
-          data: 'example-000/*.json'
+          data: ['example-000/*.json']
         }
       },
       example010: {
@@ -78,48 +95,29 @@ module.exports = function(grunt) {
           styles: 'example-060/styles.css',
           data: 'example-060/*.json'
         }
-      },
-
-      // Pages collection, array format.
-      // pagination070: {
-      //   files: {'_gh_pages/example-070/': ['example-070/index.hbs']},
-      //   options: {
-      //     layout: 'component.hbs',
-      //     pages: '<%= pagination.pages.one %>',
-      //     partials: 'example-070/pagination.hbs',
-      //     data: ['example-070/pagination.json', 'pagination.json'],
-      //   }
-      // },
-      // // Pages collection, array format.
-      // pagination080: {
-      //   files: {'_gh_pages/example-080/': ['example-080/index.hbs']},
-      //   options: {
-      //     layout: 'component.hbs',
-      //     pages: '<%= pagination.pages.two %>',
-      //     partials: 'example-080/pagination.hbs',
-      //     data: 'example-080/*.json',
-      //   }
-      // },
-      // // Pages collection, object format.
-      // pagination081: {
-      //   files: {'_gh_pages/example-081/': ['example-080/index.hbs']},
-      //   options: {
-      //     layout: 'component.hbs',
-      //     pages: '<%= pagination.pages.three %>',
-      //     partials: 'example-080/pagination.hbs',
-      //     data: 'example-080/*.json',
-      //   }
-      // },
-      // example090: {
-      //   files: {'_gh_pages/example-090/': ['example-090/index.hbs']},
-      //   options: {
-      //     layout: 'component.hbs',
-      //     pages: '<%= pagination.pages.four %>',
-      //     partials: 'example-090/pagination.hbs',
-      //     data: 'example-090/*.json',
-      //   }
-      // }
+      }
     },
+
+
+    /**
+     * Compile LESS to CSS
+     */
+    less: {
+      options: {
+        paths: ['theme/bootstrap', 'theme/components', 'theme']
+      },
+      docs: {
+        src: ['theme/theme.less'],
+        dest: '<%= assemble.options.assets %>/css/docs.css'
+      }
+    },
+
+
+    jshint: {
+      options: {jshintrc: '.jshintrc', },
+      allFiles: ['Gruntfile.js', 'templates/helpers/*.js']
+    },
+
     // Before creating new files, remove files from previous build.
     clean: ['_gh_pages/**/*.html']
 
@@ -127,9 +125,11 @@ module.exports = function(grunt) {
 
   // Load npm plugins to provide necessary tasks.
   grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('assemble-less');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task to be run.
-  grunt.registerTask('default', ['clean', 'assemble']);
+  grunt.registerTask('default', ['clean', 'jshint', 'assemble']);
 
 };

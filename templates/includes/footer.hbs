@@ -1,23 +1,27 @@
-<footer class="bs-footer" role="contentinfo">
-  <div class="container">
-    {{!> social-buttons }}
-
-    <p>{{site.description}}</p>
-    <p>Code licensed under the <a href="./license/" target="_blank">{{ site.license.type }}</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-    <ul class="footer-links">
-      <li><a href="{{ site.repo }}">Repo</a></li>
-      <li class="muted">&middot;</li>
-      <li><a href="{{ site.repo }}/issues?state=open">Issues</a></li>
-      <li class="muted">&middot;</li>
-      <li><a href="http://assemble.io">Assemble</a></li>
-    </ul>
-  </div>
-</footer>
-
-
+<!-- Bootstrap core JavaScript
+================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{{assets}}/js/jquery.js"></script>
-<script src="{{assets}}/js/bootstrap.min.js"></script>
+<script src="{{ assets }}/js/jquery.js"></script>
+<script src="{{ assets }}/js/bootstrap.js"></script>
+
 <script src="http://platform.twitter.com/widgets.js"></script>
-<script src="{{assets}}/js/holder.js"></script>
-<script src="{{assets}}/js/highlight.js"></script>
+<script src="{{ assets }}/js/holder.js"></script>
+<script src="{{ assets }}/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="{{ assets }}/js/application.js"></script>
+
+<!-- Analytics
+================================================== -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '{{site.google.site_id}}');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>

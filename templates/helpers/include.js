@@ -22,22 +22,23 @@ module.exports.register = function (Handlebars, options, params) {
   var pages    = assemble.options;
   var _        = require('lodash');
 
-  var configData = grunt.config.process(grunt.config.data);
-  var data = grunt.file.expand(configData.assemble.options.data);
+  // var configData = grunt.config.process(grunt.config.data);
+  // var data = grunt.file.expand(configData.assemble.options.data);
 
-  var localContext = data.map(function(src) {
-    return _.extend({}, configData, src);
-  });
+  // var localContext = data.map(function(src) {
+  //   return _.extend({}, configData, src);
+  // });
 
   // console.log(localContext);
 
   /**
    * {{include}}
    */
-  exports.include = function(context) {
-    console.log(pages);
-    var template = Handlebars.compile(context);
-    context = _.extend({}, this, localContext, opts);
+  exports.include = function(options) {
+    var source = options.fn(this);
+    var template = Handlebars.compile(source);
+    // context = _.extend({}, this, localContext, opts.data, options.hash);
+    var context = _.extend({}, this, opts.data, options.hash);
     return new Handlebars.SafeString(template(context));
   };
 

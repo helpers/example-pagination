@@ -49,7 +49,7 @@ module.exports.register = function (Handlebars, options, params) {
     if (options.data) {
       data = Handlebars.createFrame(options.data);
     }
-    console.log(context);
+
     if(context && typeof context === 'object') {
       if (_.isArray(context)) {
         for(var j = context.length; i<j; i++) {

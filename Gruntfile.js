@@ -93,8 +93,9 @@ module.exports = function(grunt) {
         }
       },
       example060: {
-        files: {'_gh_pages/example-060/': ['example-060/index.hbs']},
+        files: {'_gh_pages/example-060/': ['example-060/index.hbs', 'example-060/alert-*.hbs']},
         options: {
+          example: 'example-060',
           partials: 'example-060/pagination.hbs',
           styles: 'example-060/styles.css',
           data: 'example-060/*.json'

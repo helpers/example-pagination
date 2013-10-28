@@ -2,3 +2,11 @@
 title: example-060
 layout: <%= title %>/layout.hbs
 ---
+{{#each pages}}
+  <!-- page -->
+  {{#isnt this.basename "index"}}
+    {{#include}}
+      {{{page}}}
+    {{/include}}
+  {{/isnt}}
+{{/each}}

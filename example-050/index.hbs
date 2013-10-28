@@ -1,12 +1,22 @@
 ---
 title: example-050
-layout: <%= title %>/layout.hbs
+layout: <%= example %>/layout.hbs
 ---
+<h1>{{title}}</h1>
+
 {{#each pages}}
-  <!-- page -->
   {{#isnt this.basename "index"}}
+
+
+    <!-- page -->
     {{#include}}
-      {{{page}}}
+      <h2>{{{data.title}}}</h2>
+      <div class="bs-example">
+        {{{page}}}
+      </div>
+      <a href="{{relative ../../../page.dest this.dest}}">Visit component</a>
     {{/include}}
+
+
   {{/isnt}}
 {{/each}}

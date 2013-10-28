@@ -1,17 +1,14 @@
 {
-  "demo": {
-    "title": "Example 000: Assemble Pagination",
-    "component": "pagination",
-    "modifier": "pagination-justified",
-    "authors": [
-      {
-        "name": "Jon Schlinkert",
-        "url": "https://github.com/jonschlinkert/"
-      },
-      {
-        "name": "Brian Woodward",
-        "url": "https://github.com/doowb/"
-      }
-    ]
-  }
+  "component": "Alerts",
+  "title": "<%= demo.component %>",
+  "authors": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "https://github.com/jonschlinkert/"
+    },
+    {
+      "name": "Brian Woodward",
+      "url": "https://github.com/doowb/"
+    }
+  ]
 }

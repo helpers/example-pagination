@@ -1,0 +1,14 @@
+<!-- page -->
+<div class="docs-section">
+  <h4>Related components</h4>
+  {{#each pages}}
+    {{#isnt this.basename 'index'}}
+      <!-- page -->
+      <ul class="nav nav-pills nav-stacked">
+        <li{{#is ../../page.dest this.dest}} class="active"{{/is}}>
+          <a href="{{relative ../../page.dest this.dest}}">{{{data.title}}}</a>
+        </li>
+      </ul>
+    {{/isnt}}
+  {{/each}}
+</div>

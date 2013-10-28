@@ -4213,10 +4213,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pager .next > a,
 .pager .next > span {
   float: right;
+  min-width: 120px;
 }
 .pager .previous > a,
 .pager .previous > span {
   float: left;
+  min-width: 120px;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
@@ -7119,8 +7121,51 @@ h1[id] {
     width: 263px;
   }
 }
+.pager {
+  padding: 5px 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+.pager-rounded {
+  margin-top: 40px;
+  padding: 7px 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 25px;
+}
+.pager li.active > a,
+.pager-rounded li.active > a {
+  background-color: #eeeeee;
+}
+.pager .pager-heading {
+  font-size: 16px;
+  float: left;
+  padding: 5px 0 0;
+  min-width: 120px;
+}
+.pager-justified {
+  padding: 0;
+}
+.pager-justified li > a {
+  display: block;
+  width: 50%;
+  margin: 0;
+  padding: 8px 0;
+  border-radius: 0;
+  border: none;
+}
+.pager-justified .pager-heading {
+  padding: 8px 0 0;
+  min-width: 0;
+}
+.pager-justified .disabled > a,
+.pager-justified .disabled > a:hover,
+.pager-justified .disabled > a:focus,
+.pager-justified .disabled > span {
+  cursor: text;
+}
 body {
   padding-top: 60px;
+  min-height: 1500px;
 }
 /**
  * Neutralize background color to allow our
@@ -7128,4 +7173,10 @@ body {
  */
 pre code {
   background: transparent;
+}
+.docs-section {
+  margin-top: 80px;
+}
+.component {
+  margin-bottom: 40px;
 }

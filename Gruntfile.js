@@ -45,8 +45,9 @@ module.exports = function(grunt) {
         files: {'_gh_pages/': ['templates/*.hbs']},
       },
       example000: {
-        files: {'_gh_pages/example-000/': ['example-000/alert-*.hbs']},
+        files: {'_gh_pages/example-000/': ['example-000/index.hbs', 'example-000/alert-*.hbs']},
         options: {
+          example: 'example-000',
           styles: 'example-000/styles.css',
           data: ['example-000/*.json']
         }
@@ -135,6 +136,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task to be run.
-  grunt.registerTask('default', ['clean', 'jshint', 'assemble']);
+  grunt.registerTask('default', ['clean', 'jshint', 'less', 'assemble']);
 
 };

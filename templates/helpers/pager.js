@@ -3,6 +3,7 @@
  * Copyright (c) 2013 Jon Schlinkert
  * Licensed under the MIT License (MIT).
  */
+'use strict';
 
 // Node.js
 var path   = require('path');
@@ -13,9 +14,9 @@ var grunt = require('grunt');
 var _ = grunt.util._;
 
 // Export helpers
-module.exports.register = function (Handlebars, options) {
+module.exports.register = function (Handlebars, options, params) {
 
-  'use strict';
+  var opts = options;
 
   /**
    * {{pager}}
@@ -24,8 +25,8 @@ module.exports.register = function (Handlebars, options) {
    * @param  {Object} opts    Pass a modifier class to the helper.
    * @return {String}         The pager, HTML.
    */
-  exports.pager = function(context, opts) {
-    context = _.extend({modifier:''}, context, opts.hash, this);
+  exports.pager = function(context, options) {
+    context = _.extend({modifier:''}, context, options.hash, this);
     // grunt.file.write('pager.json', JSON.stringify(context, null, 2));
 
     var template = [

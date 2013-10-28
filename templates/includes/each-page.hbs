@@ -1,0 +1,13 @@
+{{#each pages}}
+  {{#isnt this.basename "index"}}
+    {{#include}}
+      <!-- page -->
+      <section class="component">
+        <h4>{{{data.title}}} <a href="{{relative ../../../page.dest this.dest}}"> <small class="pull-right">visit component &rarr;</small></a></h4>
+        <div class="bs-example">
+          {{{page}}}
+        </div>
+      </section>
+    {{/include}}
+  {{/isnt}}
+{{/each}}

@@ -4,38 +4,38 @@
   "layouts": {
     "blog": "blog.hbs"
   },
-  "posts": [
+  "archives": [
     {
       "data": {
         "title": "My First Post",
         "date": "2014-01-01",
-        "layout": "<%= pages.layouts.blog %>",
+        "layout": "<%= posts.layouts.blog %>",
         "categories": [],
         "tags": []
       },
-      "content": "<%= pages.thumbnail %>{{lorem ipsum.paragraph}}",
+      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}",
       "filename": "2014-01-01.html"
     },
     {
       "data": {
         "title": "My Second Post",
         "date": "2014-01-02",
-        "layout": "<%= pages.layouts.blog %>",
+        "layout": "<%= posts.layouts.blog %>",
         "categories": [],
         "tags": []
       },
-      "content": "<%= pages.thumbnail %>{{lorem ipsum.paragraph}}",
+      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}",
       "filename": "2014-01-02.html"
     },
     {
       "data": {
         "title": "My Third Post",
         "date": "2014-01-02",
-        "layout": "<%= pages.layouts.blog %>",
+        "layout": "<%= posts.layouts.blog %>",
         "categories": [],
         "tags": []
       },
-      "content": "<%= pages.thumbnail %>{{lorem ipsum.paragraph}}",
+      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}",
       "filename": "2014-01-03.html"
     }
   ]

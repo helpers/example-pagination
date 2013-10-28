@@ -25,14 +25,14 @@ module.exports.register = function (Handlebars, options) {
    * @param  {Object} opts    Pass a modifier class to the helper.
    * @return {String}         The pager, HTML.
    */
-  exports.pagination = function (currentPage, pageCount, limit, options) {
+  exports.paginator = function (currentPage, pageCount, limit, options) {
 
     // grunt.file.write('pagination.json', JSON.stringify(context, null, 2));
     if (arguments.length === 3) {
       options = limit;
       limit = 5;
     }
-    console.log(limit);
+    // console.log(limit);
 
     var startPage = currentPage - Math.floor(limit / 2);
     var endPage = currentPage + Math.floor(limit / 2);

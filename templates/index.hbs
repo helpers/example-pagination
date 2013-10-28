@@ -2,8 +2,9 @@
 title: Home
 ---
 {{#each pages}}
+  {{page}}
   <!-- page -->
-  {{#include}}
-    {{{page}}}
-  {{/include}}
+  {{!#include}}
+    {{!page}}
+  {{!/include}}
 {{/each}}

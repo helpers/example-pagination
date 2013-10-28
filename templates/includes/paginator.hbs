@@ -1,4 +1,4 @@
-{{#pagination pagination.currentPage pagination.totalPages 4}}
+{{#paginator pagination.currentPage pagination.totalPages 4}}
 <div class="pagination">
   {{#unless firstPage}}
     <a href="#">&larr; Previous</a>
@@ -17,4 +17,4 @@
     <a href="{{relative page.dest next.dest}}">Next &rarr;</a>
   {{/unless}}
 </div>
-{{/pagination}}
+{{/paginator}}

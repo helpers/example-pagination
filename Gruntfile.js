@@ -34,12 +34,15 @@ module.exports = function(grunt) {
           return pretty(src);
         }
       },
-      pages: {
-        files: {'_gh_pages/': ['example-000/alert-*.hbs', 'templates/*.hbs']},
-        options: {
-          styles: 'example-000/styles.css',
-          data: ['example-000/*.json']
-        }
+      // pages: {
+      //   files: {'_gh_pages/': ['example-000/alert-*.hbs', 'templates/*.hbs']},
+      //   options: {
+      //     styles: 'example-000/styles.css',
+      //     data: ['example-000/*.json']
+      //   }
+      // },
+      index: {
+        files: {'_gh_pages/': ['templates/*.hbs']},
       },
       example000: {
         files: {'_gh_pages/example-000/': ['example-000/alert-*.hbs']},

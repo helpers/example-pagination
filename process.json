@@ -1,0 +1,335 @@
+{
+  "site": {
+    "dest": "_gh_pages",
+    "title": "Bootstrap Components",
+    "lead": false,
+    "description": "Templates and data for Bootstrap's components.\r\n",
+    "license": {
+      "type": "MIT License",
+      "url": "./license/index.html"
+    },
+    "blog": "http://assemble.io/blog/",
+    "repo": "https://github.com/upstage/bootstrap-templates",
+    "download": {
+      "source": "https://github.com/upstage/bootstrap-templates/archive/master.zip"
+    },
+    "google": {
+      "analytics": false,
+      "site_id": false
+    },
+    "disqus": {
+      "shortname": "bootstrap-templates"
+    },
+    "social": {
+      "twitter": false,
+      "facebook": false,
+      "gplus": false,
+      "hn": false,
+      "google": false
+    }
+  },
+  "assemble": {
+    "options": {
+      "site": {
+        "dest": "_gh_pages",
+        "title": "Bootstrap Components",
+        "lead": false,
+        "description": "Templates and data for Bootstrap's components.\r\n",
+        "license": {
+          "type": "MIT License",
+          "url": "./license/index.html"
+        },
+        "blog": "http://assemble.io/blog/",
+        "repo": "https://github.com/upstage/bootstrap-templates",
+        "download": {
+          "source": "https://github.com/upstage/bootstrap-templates/archive/master.zip"
+        },
+        "google": {
+          "analytics": false,
+          "site_id": false
+        },
+        "disqus": {
+          "shortname": "bootstrap-templates"
+        },
+        "social": {
+          "twitter": false,
+          "facebook": false,
+          "gplus": false,
+          "hn": false,
+          "google": false
+        }
+      },
+      "plugins": [
+        "assemble-contrib-contextual"
+      ],
+      "contextual": {
+        "dest": "tmp/"
+      },
+      "flatten": true,
+      "assets": "_gh_pages/assets",
+      "helpers": [
+        "templates/helpers/*.js",
+        "handlebars-helper-lorem"
+      ],
+      "partials": [
+        "templates/includes/*.hbs"
+      ],
+      "layout": "templates/layouts/default.hbs",
+      "data": [
+        "data/**/*.json"
+      ]
+    },
+    "index": {
+      "files": {
+        "_gh_pages/": [
+          "templates/*.hbs"
+        ]
+      }
+    },
+    "example000": {
+      "files": {
+        "_gh_pages/example-000/": [
+          "example-000/alert-*.hbs"
+        ]
+      },
+      "options": {
+        "styles": "example-000/styles.css",
+        "data": [
+          "example-000/*.json"
+        ]
+      }
+    },
+    "example010": {
+      "files": {
+        "_gh_pages/example-010/": [
+          "example-010/index.hbs"
+        ]
+      },
+      "options": {
+        "partials": "example-010/pagination.hbs",
+        "styles": "example-010/styles.css",
+        "data": "example-010/*.json"
+      }
+    },
+    "example020": {
+      "files": {
+        "_gh_pages/example-020/": [
+          "example-020/index.hbs"
+        ]
+      },
+      "options": {
+        "partials": "example-020/pagination.hbs",
+        "styles": "example-020/styles.css",
+        "data": "example-020/*.json"
+      }
+    },
+    "example030": {
+      "files": {
+        "_gh_pages/example-030/": [
+          "example-030/index.hbs"
+        ]
+      },
+      "options": {
+        "partials": "example-030/pagination.hbs",
+        "styles": "example-030/styles.css",
+        "data": "example-030/*.json"
+      }
+    },
+    "example040": {
+      "files": {
+        "_gh_pages/example-040/": [
+          "example-040/index.hbs"
+        ]
+      },
+      "options": {
+        "partials": "example-040/pagination.hbs",
+        "styles": "example-040/styles.css",
+        "data": "example-040/*.json"
+      }
+    },
+    "example050": {
+      "files": {
+        "_gh_pages/example-050/": [
+          "example-050/index.hbs"
+        ]
+      },
+      "options": {
+        "partials": "example-050/pagination.hbs",
+        "styles": "example-050/styles.css",
+        "data": "example-050/*.json"
+      }
+    },
+    "example060": {
+      "files": {
+        "_gh_pages/example-060/": [
+          "example-060/index.hbs"
+        ]
+      },
+      "options": {
+        "partials": "example-060/pagination.hbs",
+        "styles": "example-060/styles.css",
+        "data": "example-060/*.json"
+      }
+    }
+  },
+  "less": {
+    "options": {
+      "paths": [
+        "theme/bootstrap",
+        "theme/components",
+        "theme"
+      ]
+    },
+    "docs": {
+      "src": [
+        "theme/theme.less"
+      ],
+      "dest": "_gh_pages/assets/css/docs.css"
+    }
+  },
+  "jshint": {
+    "options": {
+      "jshintrc": ".jshintrc"
+    },
+    "allFiles": [
+      "Gruntfile.js",
+      "templates/helpers/*.js"
+    ]
+  },
+  "clean": [
+    "_gh_pages/**/*.html"
+  ],
+  "layoutdir": "",
+  "layout": "example-050/layout.hbs",
+  "layoutext": "",
+  "partials": [
+    "templates/includes/*.hbs",
+    "example-050/pagination.hbs"
+  ],
+  "assets": "../assets",
+  "ext": ".html",
+  "plugins": [
+    null
+  ],
+  "contextual": {
+    "dest": "tmp/"
+  },
+  "flatten": true,
+  "helpers": [
+    "templates/helpers/*.js",
+    "handlebars-helper-lorem"
+  ],
+  "originalAssets": "_gh_pages/assets",
+  "_plugins": [
+    "assemble-contrib-contextual",
+    "node_modules\\assemble\\lib\\plugins/**/*.js"
+  ],
+  "engine": "handlebars",
+  "sync": true,
+  "pages": {
+    "content": "./content",
+    "thumbnail": "<img class=\"thumbnail\" data-src=\"holder.js/100%x200/auto\">",
+    "layouts": {
+      "blog": "blog.hbs"
+    },
+    "posts": [
+      {
+        "data": {
+          "title": "My First Post",
+          "date": "2014-01-01",
+          "layout": "blog.hbs",
+          "categories": [],
+          "tags": []
+        },
+        "content": "<img class=\"thumbnail\" data-src=\"holder.js/100%x200/auto\">{{lorem ipsum.paragraph}}",
+        "filename": "2014-01-01.html"
+      },
+      {
+        "data": {
+          "title": "My Second Post",
+          "date": "2014-01-02",
+          "layout": "blog.hbs",
+          "categories": [],
+          "tags": []
+        },
+        "content": "<img class=\"thumbnail\" data-src=\"holder.js/100%x200/auto\">{{lorem ipsum.paragraph}}",
+        "filename": "2014-01-02.html"
+      },
+      {
+        "data": {
+          "title": "My Third Post",
+          "date": "2014-01-02",
+          "layout": "blog.hbs",
+          "categories": [],
+          "tags": []
+        },
+        "content": "<img class=\"thumbnail\" data-src=\"holder.js/100%x200/auto\">{{lorem ipsum.paragraph}}",
+        "filename": "2014-01-03.html"
+      }
+    ]
+  },
+  "tags": [],
+  "categories": [],
+  "alert": {},
+  "compose": {},
+  "footer": {},
+  "head": {},
+  "nav-main": {},
+  "pager": {},
+  "paginate": {},
+  "pagination": {
+    "0": {
+      "name": "foo"
+    },
+    "description": "Pagination component",
+    "pages": []
+  },
+  "post": {},
+  "social-buttons": {},
+  "ipsum": {
+    "notes": "Config options for the {{lorem}} helper.",
+    "words": {
+      "count": 5,
+      "units": "words"
+    },
+    "sentence": {
+      "count": 3,
+      "units": "sentences",
+      "sentenceLowerBound": 10,
+      "sentenceUpperBound": 15,
+      "format": "html"
+    },
+    "paragraph": {
+      "count": 3,
+      "units": "paragraphs",
+      "sentenceLowerBound": 10,
+      "sentenceUpperBound": 20,
+      "format": "html"
+    }
+  },
+  "main-nav": {
+    "left": [],
+    "right": []
+  },
+  "title": "example-050",
+  "styles": "example-050/styles.css",
+  "demo": {
+    "title": "Example 050: Assemble Pagination",
+    "description": "Page of pages.",
+    "component": "pagination",
+    "modifier": "pagination-justified",
+    "authors": [
+      {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert/"
+      },
+      {
+        "name": "Brian Woodward",
+        "url": "https://github.com/doowb/"
+      }
+    ]
+  },
+  "example": "example-000",
+  "layoutName": "layout",
+  "description": "layout for example-000"
+}

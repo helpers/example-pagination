@@ -19,6 +19,7 @@ module.exports.register = function (Handlebars, options, params) {
   var opts     = options;
   var grunt    = params.grunt;
   var assemble = params.assemble;
+  var pages    = assemble.options;
   var _        = require('lodash');
 
   var configData = grunt.config.process(grunt.config.data);
@@ -33,8 +34,9 @@ module.exports.register = function (Handlebars, options, params) {
   /**
    * {{include}}
    */
-  exports.include = function(template, context) {
-    template = Handlebars.compile(template);
+  exports.include = function(context) {
+    console.log(pages);
+    var template = Handlebars.compile(context);
     context = _.extend({}, this, localContext, opts);
     return new Handlebars.SafeString(template(context));
   };

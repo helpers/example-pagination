@@ -29,25 +29,20 @@ module.exports.register = function (Handlebars, options) {
     grunt.file.write('pager.json', JSON.stringify(context, null, 2));
 
     var template = [
-      '{{#is page.index 1}}',
-      '  <ul class="pager {{modifier}}">',
-      // '    <li class="pager-heading">POPULAR</li>',
-      '    <li class="previous"><a href="{{relative page.dest prev.dest}}">&larr; Previous</a></li>',
-      '    <li class="next"><a href="{{relative page.dest next.dest}}">Next &rarr;</a></li>',
-      '  </ul>',
-      '{{else}}',
-      '  {{#is pagination.currentPage pagination.totalPages}}',
-      '    <ul class="pager {{modifier}}">',
-      '      <li class="previous"><a href="{{relative page.dest prev.dest}}">&larr; Previous</a></li>',
-      '      <li class="next disabled"><a href="{{relative page.dest next.dest}}">Next &rarr;</a></li>',
-      '    </ul>',
-      '  {{else}}',
-      '    <ul class="pager {{modifier}}">',
-      '      <li class="previous"><a href="{{relative page.dest prev.dest}}">&larr; Previous</a></li>',
-      '      <li class="next"><a href="{{relative page.dest next.dest}}">Next &rarr;</a></li>',
-      '    </ul>',
+      '<ul class="pager {{modifier}}">',
+      '  {{#is pagination.currentPage 1}}',
+      '    <li class="pager-heading">POPULAR</li>',
       '  {{/is}}',
-      '{{/is}}'
+      '  {{#isnt pagination.currentPage 1}}',
+      '    <li class="previous"><a href="{{relative page.dest prev.dest}}">&larr; Previous</a></li>',
+      '  {{/isnt}}',
+      '  {{#isnt pagination.currentPage pagination.totalPages}}',
+      '    <li class="next"><a href="{{relative page.dest next.dest}}">Next &rarr;</a></li>',
+      '  {{/isnt}}',
+      '  {{#is pagination.currentPage pagination.totalPages}}',
+      '    <li class="next disabled"><a href="{{relative page.dest next.dest}}">Next &rarr;</a></li>',
+      '  {{/is}}',
+      '</ul>'
     ].join('\n');
 
     return new Handlebars.SafeString(Handlebars.compile(template)(context));

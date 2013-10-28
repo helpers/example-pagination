@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>alert-danger | Bootstrap Components</title>
+    <title>Home | Bootstrap Components</title>
 
     <!-- Core CSS -->
     <link href="assets/css/blog.css" rel="stylesheet">
@@ -69,31 +69,15 @@
 
     <!-- Content -->
     <div class="container">
+      &lt;h1&gt;{{title}}&lt;/h1&gt; {{lorem ipsum.sentence}} &lt;hr&gt; {{lorem ipsum.paragraph}} &lt;hr&gt; {{lorem ipsum.sentence}} &lt;hr&gt; {{lorem ipsum.words}}
 
-      <!-- Pager -->
-      <ul class="pager ">
-        <li class="previous">
-          <a href="alert-03.html">&larr; Previous</a>
-        </li>
-        <li class="next">
-          <a href="about.html">Next &rarr;</a>
-        </li>
-      </ul>
+      <!-- page -->
+      {{#each pages}} {{page}} &lt;!-- page --&gt; {{!#include}} {{!page}} {{!/include}} {{/each}}
 
-      <!-- Header -->
-      <div class="bs-docs-section">
-        <div class="page-header">
-          <h1 id="alert-04">alert-danger</h1>
-        </div>
-      </div>
+      <!-- page -->
+      {{{md &quot;LICENSE-MIT&quot;}}}
 
-      <!-- Component -->
-      <div class="bs-example">
-        <div class="alert alert-danger">
-          <strong>Oh snap!</strong> Change a few things up and try submitting again.
-          <a href="http://github.com/assemble/assemble/" class="alert-link">Change a few things up</a>&nbsp;and try submitting again.
-        </div>
-      </div>
+      <!-- page -->
     </div>
 
     <!-- JS and analytics only. -->

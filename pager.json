@@ -1,84 +1,88 @@
 {
+  "modifier": "",
   "prev": {
     "_page": "all",
-    "dirname": "_gh_pages/example-000",
+    "dirname": "_gh_pages/example-050",
     "filename": "alert-03.html",
     "pageName": "alert-03.html",
     "pagename": "alert-03.html",
     "basename": "alert-03",
-    "src": "example-000/alert-03.hbs",
-    "dest": "_gh_pages/example-000/alert-03.html",
+    "src": "example-050/alert-03.hbs",
+    "dest": "_gh_pages/example-050/alert-03.html",
     "assets": "../assets",
     "ext": ".html",
     "extname": ".html",
-    "page": "\r\n{{> alert alert.success }}",
+    "page": "\n{{> alert alert.success }}",
     "data": {
       "title": "alert-success",
-      "example": "example-000",
-      "layout": "example-000/layout.hbs"
+      "layout": "example-050/layout.hbs"
     },
     "filePair": {
       "src": [
-        "example-000/alert-01.hbs",
-        "example-000/alert-02.hbs",
-        "example-000/alert-03.hbs",
-        "example-000/alert-04.hbs"
+        "example-050/index.hbs",
+        "example-050/alert-01.hbs",
+        "example-050/alert-02.hbs",
+        "example-050/alert-03.hbs",
+        "example-050/alert-04.hbs"
       ],
-      "dest": "_gh_pages/example-000/",
+      "dest": "_gh_pages/example-050/",
       "orig": {
         "src": [
-          "example-000/alert-*.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-*.hbs"
         ],
-        "dest": "_gh_pages/example-000/"
+        "dest": "_gh_pages/example-050/"
       }
     },
-    "index": 2,
-    "prev": 1,
-    "next": 3
+    "index": 3,
+    "prev": 2,
+    "next": 4
   },
   "next": {
     "_page": "all",
-    "dirname": "_gh_pages/example-000",
+    "dirname": "_gh_pages/example-050",
     "filename": "alert-04.html",
     "pageName": "alert-04.html",
     "pagename": "alert-04.html",
     "basename": "alert-04",
-    "src": "example-000/alert-04.hbs",
-    "dest": "_gh_pages/example-000/alert-04.html",
+    "src": "example-050/alert-04.hbs",
+    "dest": "_gh_pages/example-050/alert-04.html",
     "assets": "../assets",
     "ext": ".html",
     "extname": ".html",
-    "page": "\r\n{{> alert alert.danger }}",
+    "page": "\n{{> alert alert.danger }}",
     "data": {
       "title": "alert-danger",
-      "example": "example-000",
-      "layout": "example-000/layout.hbs"
+      "layout": "example-050/layout.hbs"
     },
     "filePair": {
       "src": [
-        "example-000/alert-01.hbs",
-        "example-000/alert-02.hbs",
-        "example-000/alert-03.hbs",
-        "example-000/alert-04.hbs"
+        "example-050/index.hbs",
+        "example-050/alert-01.hbs",
+        "example-050/alert-02.hbs",
+        "example-050/alert-03.hbs",
+        "example-050/alert-04.hbs"
       ],
-      "dest": "_gh_pages/example-000/",
+      "dest": "_gh_pages/example-050/",
       "orig": {
         "src": [
-          "example-000/alert-*.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-*.hbs"
         ],
-        "dest": "_gh_pages/example-000/"
+        "dest": "_gh_pages/example-050/"
       }
     },
-    "index": 3,
-    "prev": 2
+    "index": 4,
+    "prev": 3
   },
-  "totalPages": 4,
-  "currentPage": 4,
+  "totalPages": 5,
+  "currentPage": 5,
   "layoutdir": "",
-  "layout": "example-000/layout.hbs",
+  "layout": "example-050/layout.hbs",
   "layoutext": "",
   "partials": [
-    "templates/includes/*.hbs"
+    "templates/includes/*.hbs",
+    "example-050/pagination.hbs"
   ],
   "assets": "../assets",
   "ext": ".html",
@@ -112,7 +116,6 @@
     }
   },
   "plugins": [
-    null,
     null
   ],
   "contextual": {
@@ -123,7 +126,8 @@
     "templates/helpers/*.js",
     "handlebars-helper-lorem"
   ],
-  "styles": "example-000/styles.css",
+  "example": "example-050",
+  "styles": "example-050/styles.css",
   "originalAssets": "_gh_pages/assets",
   "_plugins": [
     "assemble-contrib-contextual",
@@ -134,35 +138,36 @@
   "pages": [
     {
       "_page": "all",
-      "dirname": "_gh_pages/example-000",
-      "filename": "alert-01.html",
-      "pageName": "alert-01.html",
-      "pagename": "alert-01.html",
-      "basename": "alert-01",
-      "src": "example-000/alert-01.hbs",
-      "dest": "_gh_pages/example-000/alert-01.html",
+      "dirname": "_gh_pages/example-050",
+      "filename": "index.html",
+      "pageName": "index.html",
+      "pagename": "index.html",
+      "basename": "index",
+      "src": "example-050/index.hbs",
+      "dest": "_gh_pages/example-050/index.html",
       "assets": "../assets",
       "ext": ".html",
       "extname": ".html",
-      "page": "\r\n{{> alert alert.default }}\r\n",
+      "page": "\n\n{{#each pages}}\n  <!-- page -->\n  {{#is this.basename \"index\"}}\n  {{else}}\n    {{#include}}\n      {{{page}}}\n    {{/include}}\n  {{/is}}\n{{/each}}",
       "data": {
-        "title": "alert-default",
-        "example": "example-000",
-        "layout": "example-000/layout.hbs"
+        "title": "example-050",
+        "layout": "example-050/layout.hbs"
       },
       "filePair": {
         "src": [
-          "example-000/alert-01.hbs",
-          "example-000/alert-02.hbs",
-          "example-000/alert-03.hbs",
-          "example-000/alert-04.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-01.hbs",
+          "example-050/alert-02.hbs",
+          "example-050/alert-03.hbs",
+          "example-050/alert-04.hbs"
         ],
-        "dest": "_gh_pages/example-000/",
+        "dest": "_gh_pages/example-050/",
         "orig": {
           "src": [
-            "example-000/alert-*.hbs"
+            "example-050/index.hbs",
+            "example-050/alert-*.hbs"
           ],
-          "dest": "_gh_pages/example-000/"
+          "dest": "_gh_pages/example-050/"
         }
       },
       "index": 0,
@@ -170,35 +175,36 @@
     },
     {
       "_page": "all",
-      "dirname": "_gh_pages/example-000",
-      "filename": "alert-02.html",
-      "pageName": "alert-02.html",
-      "pagename": "alert-02.html",
-      "basename": "alert-02",
-      "src": "example-000/alert-02.hbs",
-      "dest": "_gh_pages/example-000/alert-02.html",
+      "dirname": "_gh_pages/example-050",
+      "filename": "alert-01.html",
+      "pageName": "alert-01.html",
+      "pagename": "alert-01.html",
+      "basename": "alert-01",
+      "src": "example-050/alert-01.hbs",
+      "dest": "_gh_pages/example-050/alert-01.html",
       "assets": "../assets",
       "ext": ".html",
       "extname": ".html",
-      "page": "\r\n{{> alert alert.warning }}\r\n",
+      "page": "\n{{> alert alert.default }}\n",
       "data": {
-        "title": "alert-warning",
-        "example": "example-000",
-        "layout": "example-000/layout.hbs"
+        "title": "alert-default",
+        "layout": "example-050/layout.hbs"
       },
       "filePair": {
         "src": [
-          "example-000/alert-01.hbs",
-          "example-000/alert-02.hbs",
-          "example-000/alert-03.hbs",
-          "example-000/alert-04.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-01.hbs",
+          "example-050/alert-02.hbs",
+          "example-050/alert-03.hbs",
+          "example-050/alert-04.hbs"
         ],
-        "dest": "_gh_pages/example-000/",
+        "dest": "_gh_pages/example-050/",
         "orig": {
           "src": [
-            "example-000/alert-*.hbs"
+            "example-050/index.hbs",
+            "example-050/alert-*.hbs"
           ],
-          "dest": "_gh_pages/example-000/"
+          "dest": "_gh_pages/example-050/"
         }
       },
       "index": 1,
@@ -207,35 +213,36 @@
     },
     {
       "_page": "all",
-      "dirname": "_gh_pages/example-000",
-      "filename": "alert-03.html",
-      "pageName": "alert-03.html",
-      "pagename": "alert-03.html",
-      "basename": "alert-03",
-      "src": "example-000/alert-03.hbs",
-      "dest": "_gh_pages/example-000/alert-03.html",
+      "dirname": "_gh_pages/example-050",
+      "filename": "alert-02.html",
+      "pageName": "alert-02.html",
+      "pagename": "alert-02.html",
+      "basename": "alert-02",
+      "src": "example-050/alert-02.hbs",
+      "dest": "_gh_pages/example-050/alert-02.html",
       "assets": "../assets",
       "ext": ".html",
       "extname": ".html",
-      "page": "\r\n{{> alert alert.success }}",
+      "page": "\n{{> alert alert.warning }}\n",
       "data": {
-        "title": "alert-success",
-        "example": "example-000",
-        "layout": "example-000/layout.hbs"
+        "title": "alert-warning",
+        "layout": "example-050/layout.hbs"
       },
       "filePair": {
         "src": [
-          "example-000/alert-01.hbs",
-          "example-000/alert-02.hbs",
-          "example-000/alert-03.hbs",
-          "example-000/alert-04.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-01.hbs",
+          "example-050/alert-02.hbs",
+          "example-050/alert-03.hbs",
+          "example-050/alert-04.hbs"
         ],
-        "dest": "_gh_pages/example-000/",
+        "dest": "_gh_pages/example-050/",
         "orig": {
           "src": [
-            "example-000/alert-*.hbs"
+            "example-050/index.hbs",
+            "example-050/alert-*.hbs"
           ],
-          "dest": "_gh_pages/example-000/"
+          "dest": "_gh_pages/example-050/"
         }
       },
       "index": 2,
@@ -244,39 +251,78 @@
     },
     {
       "_page": "all",
-      "dirname": "_gh_pages/example-000",
+      "dirname": "_gh_pages/example-050",
+      "filename": "alert-03.html",
+      "pageName": "alert-03.html",
+      "pagename": "alert-03.html",
+      "basename": "alert-03",
+      "src": "example-050/alert-03.hbs",
+      "dest": "_gh_pages/example-050/alert-03.html",
+      "assets": "../assets",
+      "ext": ".html",
+      "extname": ".html",
+      "page": "\n{{> alert alert.success }}",
+      "data": {
+        "title": "alert-success",
+        "layout": "example-050/layout.hbs"
+      },
+      "filePair": {
+        "src": [
+          "example-050/index.hbs",
+          "example-050/alert-01.hbs",
+          "example-050/alert-02.hbs",
+          "example-050/alert-03.hbs",
+          "example-050/alert-04.hbs"
+        ],
+        "dest": "_gh_pages/example-050/",
+        "orig": {
+          "src": [
+            "example-050/index.hbs",
+            "example-050/alert-*.hbs"
+          ],
+          "dest": "_gh_pages/example-050/"
+        }
+      },
+      "index": 3,
+      "prev": 2,
+      "next": 4
+    },
+    {
+      "_page": "all",
+      "dirname": "_gh_pages/example-050",
       "filename": "alert-04.html",
       "pageName": "alert-04.html",
       "pagename": "alert-04.html",
       "basename": "alert-04",
-      "src": "example-000/alert-04.hbs",
-      "dest": "_gh_pages/example-000/alert-04.html",
+      "src": "example-050/alert-04.hbs",
+      "dest": "_gh_pages/example-050/alert-04.html",
       "assets": "../assets",
       "ext": ".html",
       "extname": ".html",
-      "page": "\r\n{{> alert alert.danger }}",
+      "page": "\n{{> alert alert.danger }}",
       "data": {
         "title": "alert-danger",
-        "example": "example-000",
-        "layout": "example-000/layout.hbs"
+        "layout": "example-050/layout.hbs"
       },
       "filePair": {
         "src": [
-          "example-000/alert-01.hbs",
-          "example-000/alert-02.hbs",
-          "example-000/alert-03.hbs",
-          "example-000/alert-04.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-01.hbs",
+          "example-050/alert-02.hbs",
+          "example-050/alert-03.hbs",
+          "example-050/alert-04.hbs"
         ],
-        "dest": "_gh_pages/example-000/",
+        "dest": "_gh_pages/example-050/",
         "orig": {
           "src": [
-            "example-000/alert-*.hbs"
+            "example-050/index.hbs",
+            "example-050/alert-*.hbs"
           ],
-          "dest": "_gh_pages/example-000/"
+          "dest": "_gh_pages/example-050/"
         }
       },
-      "index": 3,
-      "prev": 2
+      "index": 4,
+      "prev": 3
     }
   ],
   "tags": [],
@@ -323,79 +369,81 @@
   "pagination": {
     "prev": {
       "_page": "all",
-      "dirname": "_gh_pages/example-000",
+      "dirname": "_gh_pages/example-050",
       "filename": "alert-03.html",
       "pageName": "alert-03.html",
       "pagename": "alert-03.html",
       "basename": "alert-03",
-      "src": "example-000/alert-03.hbs",
-      "dest": "_gh_pages/example-000/alert-03.html",
+      "src": "example-050/alert-03.hbs",
+      "dest": "_gh_pages/example-050/alert-03.html",
       "assets": "../assets",
       "ext": ".html",
       "extname": ".html",
-      "page": "\r\n{{> alert alert.success }}",
+      "page": "\n{{> alert alert.success }}",
       "data": {
         "title": "alert-success",
-        "example": "example-000",
-        "layout": "example-000/layout.hbs"
+        "layout": "example-050/layout.hbs"
       },
       "filePair": {
         "src": [
-          "example-000/alert-01.hbs",
-          "example-000/alert-02.hbs",
-          "example-000/alert-03.hbs",
-          "example-000/alert-04.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-01.hbs",
+          "example-050/alert-02.hbs",
+          "example-050/alert-03.hbs",
+          "example-050/alert-04.hbs"
         ],
-        "dest": "_gh_pages/example-000/",
+        "dest": "_gh_pages/example-050/",
         "orig": {
           "src": [
-            "example-000/alert-*.hbs"
+            "example-050/index.hbs",
+            "example-050/alert-*.hbs"
           ],
-          "dest": "_gh_pages/example-000/"
+          "dest": "_gh_pages/example-050/"
         }
       },
-      "index": 2,
-      "prev": 1,
-      "next": 3
+      "index": 3,
+      "prev": 2,
+      "next": 4
     },
     "next": {
       "_page": "all",
-      "dirname": "_gh_pages/example-000",
+      "dirname": "_gh_pages/example-050",
       "filename": "alert-04.html",
       "pageName": "alert-04.html",
       "pagename": "alert-04.html",
       "basename": "alert-04",
-      "src": "example-000/alert-04.hbs",
-      "dest": "_gh_pages/example-000/alert-04.html",
+      "src": "example-050/alert-04.hbs",
+      "dest": "_gh_pages/example-050/alert-04.html",
       "assets": "../assets",
       "ext": ".html",
       "extname": ".html",
-      "page": "\r\n{{> alert alert.danger }}",
+      "page": "\n{{> alert alert.danger }}",
       "data": {
         "title": "alert-danger",
-        "example": "example-000",
-        "layout": "example-000/layout.hbs"
+        "layout": "example-050/layout.hbs"
       },
       "filePair": {
         "src": [
-          "example-000/alert-01.hbs",
-          "example-000/alert-02.hbs",
-          "example-000/alert-03.hbs",
-          "example-000/alert-04.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-01.hbs",
+          "example-050/alert-02.hbs",
+          "example-050/alert-03.hbs",
+          "example-050/alert-04.hbs"
         ],
-        "dest": "_gh_pages/example-000/",
+        "dest": "_gh_pages/example-050/",
         "orig": {
           "src": [
-            "example-000/alert-*.hbs"
+            "example-050/index.hbs",
+            "example-050/alert-*.hbs"
           ],
-          "dest": "_gh_pages/example-000/"
+          "dest": "_gh_pages/example-050/"
         }
       },
-      "index": 3,
-      "prev": 2
+      "index": 4,
+      "prev": 3
     },
-    "totalPages": 4,
-    "currentPage": 4
+    "totalPages": 5,
+    "currentPage": 5
   },
   "post": {},
   "social-buttons": {},
@@ -425,7 +473,8 @@
     "right": []
   },
   "demo": {
-    "title": "Example 000: Assemble Pagination",
+    "title": "Example 050: Assemble Pagination",
+    "description": "Page of pages.",
     "component": "pagination",
     "modifier": "pagination-justified",
     "authors": [
@@ -440,49 +489,48 @@
     ]
   },
   "title": "alert-danger",
-  "example": "example-000",
   "layoutName": "layout",
   "page": {
     "title": "alert-danger",
-    "example": "example-000",
-    "layout": "example-000/layout.hbs",
+    "layout": "example-050/layout.hbs",
     "_page": "all",
-    "dirname": "_gh_pages/example-000",
+    "dirname": "_gh_pages/example-050",
     "filename": "alert-04.html",
     "pageName": "alert-04.html",
     "pagename": "alert-04.html",
     "basename": "alert-04",
-    "src": "example-000/alert-04.hbs",
-    "dest": "_gh_pages/example-000/alert-04.html",
+    "src": "example-050/alert-04.hbs",
+    "dest": "_gh_pages/example-050/alert-04.html",
     "assets": "../assets",
     "ext": ".html",
     "extname": ".html",
-    "page": "\r\n{{> alert alert.danger }}",
+    "page": "\n{{> alert alert.danger }}",
     "data": {
       "title": "alert-danger",
-      "example": "example-000",
-      "layout": "example-000/layout.hbs"
+      "layout": "example-050/layout.hbs"
     },
     "filePair": {
       "src": [
-        "example-000/alert-01.hbs",
-        "example-000/alert-02.hbs",
-        "example-000/alert-03.hbs",
-        "example-000/alert-04.hbs"
+        "example-050/index.hbs",
+        "example-050/alert-01.hbs",
+        "example-050/alert-02.hbs",
+        "example-050/alert-03.hbs",
+        "example-050/alert-04.hbs"
       ],
-      "dest": "_gh_pages/example-000/",
+      "dest": "_gh_pages/example-050/",
       "orig": {
         "src": [
-          "example-000/alert-*.hbs"
+          "example-050/index.hbs",
+          "example-050/alert-*.hbs"
         ],
-        "dest": "_gh_pages/example-000/"
+        "dest": "_gh_pages/example-050/"
       }
     },
-    "index": 3,
-    "prev": 2
+    "index": 4,
+    "prev": 3
   },
-  "dirname": "_gh_pages/example-000",
-  "absolute": "_gh_pages/example-000/alert-04.html",
+  "dirname": "_gh_pages/example-050",
+  "absolute": "_gh_pages/example-050/alert-04.html",
   "filename": "alert-04.html",
   "pageName": "alert-04.html",
   "pagename": "alert-04.html",

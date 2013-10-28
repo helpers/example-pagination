@@ -2,9 +2,11 @@
 title: Home
 ---
 {{#each pages}}
-  {{page}}
   <!-- page -->
-  {{!#include}}
-    {{!page}}
-  {{!/include}}
+  {{#is this.basename "index"}}
+  {{else}}
+    {{#include}}
+      {{{page}}}
+    {{/include}}
+  {{/is}}
 {{/each}}

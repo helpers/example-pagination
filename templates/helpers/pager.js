@@ -25,7 +25,7 @@ module.exports.register = function (Handlebars, options) {
    * @return {String}         The pager, HTML.
    */
   exports.pager = function(context, opts) {
-    context = _.extend({}, context, opts.hash, this);
+    context = _.extend({modifier:''}, context, opts.hash, this);
     grunt.file.write('pager.json', JSON.stringify(context, null, 2));
 
     var template = [

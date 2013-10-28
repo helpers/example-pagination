@@ -1,4 +1,14 @@
 ---
 title: example-050
-layout: <%= title %>/layout.hbs
+layout: <%= example %>/layout.hbs
 ---
+
+{{#each pages}}
+  <!-- page -->
+  {{#is this.basename "index"}}
+  {{else}}
+    {{#include}}
+      {{{page}}}
+    {{/include}}
+  {{/is}}
+{{/each}}

@@ -27,7 +27,7 @@ module.exports.register = function (Handlebars, options) {
   exports.include = function(options) {
     var source = options.fn(this);
     var template = Handlebars.compile(source);
-    var context = _.extend({}, this, opts, options.hash);
+    var context = _.extend({}, this, opts.data, options.hash);
     return new Handlebars.SafeString(template(context));
   };
 

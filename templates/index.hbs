@@ -3,7 +3,10 @@ title: Home
 ---
 {{#each pages}}
   <!-- page -->
-  {{#include}}
-    {{{page}}}
-  {{/include}}
+  {{#is this.basename "index"}}
+  {{else}}
+    {{#include}}
+      {{{page}}}
+    {{/include}}
+  {{/is}}
 {{/each}}

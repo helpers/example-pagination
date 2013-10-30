@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>alert-success | Example Pagination</title>
+    <title>Alerts | Example Pagination</title>
 
     <!-- Core CSS -->
     <link href="../assets/css/docs.css" rel="stylesheet">
@@ -57,10 +57,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="index.html" class="navbar-brand">Example Pagination</a>
+          <a href="../index.html" class="navbar-brand">Example Pagination</a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
           <ul class="nav navbar-nav navbar-right">
+            <li> <a href="../license.html">License</a> </li>
             <li> <a href="../about.html">About</a> </li>
           </ul>
         </nav>
@@ -73,18 +74,18 @@
       <!-- Pager -->
       <ul class="pager ">
         <li class="previous">
-          <a href="alert-02.html">&larr; Previous</a>
+          <a href="../index.html">&larr; Home</a>
         </li>
-        <li> <a href="index.html">1</a> </li>
+        <li class="active">
+          <a href="index.html">1</a>
+        </li>
         <li> <a href="alert-01.html">2</a> </li>
         <li> <a href="alert-02.html">3</a> </li>
-        <li class="active">
-          <a href="alert-03.html">4</a>
-        </li>
+        <li> <a href="alert-03.html">4</a> </li>
         <li> <a href="alert-04.html">5</a> </li>
         <li> <a href="alert-05.html">6</a> </li>
         <li class="next">
-          <a href="alert-04.html">Next &rarr;</a>
+          <a href="alert-01.html">Next &rarr;</a>
         </li>
       </ul>
 
@@ -93,17 +94,86 @@
       <!-- Header -->
       <div class="bs-docs-section">
         <div class="page-header">
-          <h1 id="alert-03">alert-success</h1>
+          <h1 id="index">Alerts</h1>
         </div>
       </div>
 
       <!-- Component -->
-      <div class="bs-example">
-        <div class="alert alert-success">
-          <strong>Well done!</strong> You successfully read this important alert message. You successfully read
-          <a href="http://github.com/assemble/assemble/" class="alert-link">this important alert message</a>.
+
+      <!-- page -->
+      <section class="component">
+        <h4>alert-default
+          <a href="alert-01.html">
+            <small class="pull-right">visit component &rarr;</small>
+          </a>
+        </h4>
+        <div class="bs-example">
+          <div class="alert alert-default">
+            <strong>Foo</strong> Not much going on here. You successfully read
+            <a href="#" class="alert-link">this important alert message</a>.
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- page -->
+      <section class="component">
+        <h4>alert-warning
+          <a href="alert-02.html">
+            <small class="pull-right">visit component &rarr;</small>
+          </a>
+        </h4>
+        <div class="bs-example">
+          <div class="alert alert-warning">
+            <strong>Warning!</strong> Best check yo self, you're not looking too good. Best check yo self, you're
+            <a href="#" class="alert-link">not looking too good</a>.
+          </div>
+        </div>
+      </section>
+
+      <!-- page -->
+      <section class="component">
+        <h4>alert-success
+          <a href="alert-03.html">
+            <small class="pull-right">visit component &rarr;</small>
+          </a>
+        </h4>
+        <div class="bs-example">
+          <div class="alert alert-success">
+            <strong>Well done!</strong> You successfully read this important alert message. You successfully read
+            <a href="#" class="alert-link">this important alert message</a>.
+          </div>
+        </div>
+      </section>
+
+      <!-- page -->
+      <section class="component">
+        <h4>alert-danger
+          <a href="alert-04.html">
+            <small class="pull-right">visit component &rarr;</small>
+          </a>
+        </h4>
+        <div class="bs-example">
+          <div class="alert alert-danger">
+            <strong>Oh snap!</strong> Change a few things up and try submitting again.
+            <a href="#" class="alert-link">Change a few things up</a>&nbsp;and try submitting again.
+          </div>
+        </div>
+      </section>
+
+      <!-- page -->
+      <section class="component">
+        <h4>alert-info
+          <a href="alert-05.html">
+            <small class="pull-right">visit component &rarr;</small>
+          </a>
+        </h4>
+        <div class="bs-example">
+          <div class="alert alert-info">
+            <strong>Heads up!</strong> This alert needs your attention, but it's not super important. This
+            <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+          </div>
+        </div>
+      </section>
 
       <!-- Related -->
 
@@ -123,9 +193,7 @@
 
         <!-- page -->
         <ul class="nav nav-pills nav-stacked">
-          <li class="active">
-            <a href="alert-03.html">alert-success</a>
-          </li>
+          <li> <a href="alert-03.html">alert-success</a> </li>
         </ul>
 
         <!-- page -->

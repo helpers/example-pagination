@@ -1,7 +1,7 @@
 {
   "name": "example-pagination",
   "description": "Pagination examples for Assemble.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/assemble/example-pagination",
   "author": {
     "name": "Jon Schlinkert",

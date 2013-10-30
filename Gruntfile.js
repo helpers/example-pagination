@@ -14,40 +14,37 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
-    site: grunt.file.readYAML('_config.yml'),
+    site : grunt.file.readYAML('_config.yml'),
+    components: grunt.file.readJSON('data/components.json'),
+    posts: grunt.file.readJSON('data/posts.json'),
 
     assemble: {
       options: {
         site: '<%= site %>',
-        plugins: ['assemble-contrib-contextual'],
-        contextual: {
-          dest: 'tmp/'
-        },
+        // plugins: ['assemble-contrib-contextual'],
+        contextual: {dest: 'tmp/'},
+
         flatten: true,
         assets: '_gh_pages/assets',
         // plugins: ['permalinks'],
-        helpers: ['templates/helpers/*.js', 'handlebars-helper-lorem'],
+        helpers: ['templates/helpers/*.js', 'handlebars-helper-lorem', 'handlebars-helper-post'],
         partials: ['templates/includes/*.hbs'],
         layout: 'templates/layouts/default.hbs',
         data: ['data/**/*.json'],
-        postprocess: function(src) {
-          return pretty(src);
-        }
+        postprocess: pretty
       },
-      // pages: {
-      //   files: {'_gh_pages/': ['example-000/alert-*.hbs', 'templates/*.hbs']},
+      // index: {
+      //   files: {'_gh_pages/foo/': ['example-*/index.hbs', 'example-*/alert-*.hbs', 'templates/index.hbs']},
       //   options: {
-      //     styles: 'example-000/styles.css',
-      //     data: ['example-000/*.json']
+      //     flatten: true,
+      //     layout: 'example-000/component.hbs',
+      //     data: ['example-*/*.json']
       //   }
       // },
-      index: {
-        files: {'_gh_pages/': ['templates/*.hbs']},
-      },
       example000: {
         files: {'_gh_pages/example-000/': ['example-000/index.hbs', 'example-000/alert-*.hbs']},
         options: {
-          example: 'example-000',
+          layout: 'example-000/component.hbs',
           styles: 'example-000/styles.css',
           data: ['example-000/*.json']
         }
@@ -55,8 +52,8 @@ module.exports = function(grunt) {
       example010: {
         files: {'_gh_pages/example-010/': ['example-010/index.hbs']},
         options: {
-          partials: 'example-010/pagination.hbs',
           styles: 'example-010/styles.css',
+          pages: '<%= posts.archives %>',
           data: 'example-010/*.json'
         }
       },

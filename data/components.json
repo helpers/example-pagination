@@ -1,0 +1,15 @@
+{
+  "layout": "templates/layouts/component.hbs",
+  "alerts": {
+    "alert-default": {
+      "data": {
+        "title": "alert-default",
+        "layout": "<%= components.layout %>",
+        "categories": ["components"],
+        "tags": ["alert"]
+      },
+      "content": "{{> alert alert.default }}",
+      "filename": "alert-default.html"
+    }
+  }
+}

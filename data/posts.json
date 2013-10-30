@@ -2,10 +2,10 @@
   "content": "./content",
   "thumbnail": "<img class=\"thumbnail\" data-src=\"holder.js/100%x200/auto\">",
   "layouts": {
-    "blog": "blog.hbs"
+    "blog": "templates/layouts/blog.hbs"
   },
-  "archives": [
-    {
+  "archives": {
+    "foo/bar/baz.html": {
       "data": {
         "title": "My First Post",
         "date": "2014-01-01",
@@ -13,10 +13,9 @@
         "categories": [],
         "tags": []
       },
-      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}",
-      "filename": "2014-01-01.html"
+      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}"
     },
-    {
+    "two": {
       "data": {
         "title": "My Second Post",
         "date": "2014-01-02",
@@ -24,10 +23,9 @@
         "categories": [],
         "tags": []
       },
-      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}",
-      "filename": "2014-01-02.html"
+      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}"
     },
-    {
+    "three": {
       "data": {
         "title": "My Third Post",
         "date": "2014-01-02",
@@ -35,8 +33,7 @@
         "categories": [],
         "tags": []
       },
-      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}",
-      "filename": "2014-01-03.html"
+      "content": "<%= posts.thumbnail %>{{lorem ipsum.paragraph}}"
     }
-  ]
+  }
 }

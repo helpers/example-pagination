@@ -1,21 +1,6 @@
 ---
-layout: default.hbs
+layout: templates/layouts/default.hbs
 ---
-<div class="assemble {{demo.modifier}}">
-
-  <header>
-    <h2> {{demo.title}} <a href="{{demo.component}}.html">#</a> </h2>
-    {{#if demo.source}}
-    <span class="source">
-      {{#each demo.authors}}
-        <a href="{{url}}"> {{name}} </a>
-      {{/each}}
-    </span>
-    {{/if}}
-  </header>
-
-  {{!-- Ye Olde Ckomponent'
-  ================================== --}}
+<div class="bs-example">
   {{> body }}
-
 </div>

@@ -69,8 +69,10 @@
     <div class="container">
 
       <!-- Pager -->
-      <ul class="pager pager-rounded ">
-        <li class="pager-heading">POPULAR</li>
+      <ul class="pager ">
+        <li class="previous">
+          <a href="../index.html">&larr; Home</a>
+        </li>
         <li class="active">
           <a href="index.html">1</a>
         </li>
@@ -78,6 +80,7 @@
         <li> <a href="alert-02.html">3</a> </li>
         <li> <a href="alert-03.html">4</a> </li>
         <li> <a href="alert-04.html">5</a> </li>
+        <li> <a href="alert-05.html">6</a> </li>
         <li class="next">
           <a href="alert-01.html">Next &rarr;</a>
         </li>
@@ -102,7 +105,7 @@
           </a>
         </h4>
         <div class="bs-example">
-          <div class="alert ">
+          <div class="alert alert-default">
             <strong>Foo</strong> Not much going on here. You successfully read
             <a href="<%= alert.link %>" class="alert-link">this important alert message</a>.
           </div>
@@ -154,6 +157,21 @@
         </div>
       </section>
 
+      <!-- page -->
+      <section class="component">
+        <h4>alert-info
+          <a href="alert-05.html">
+            <small class="pull-right">visit component &rarr;</small>
+          </a>
+        </h4>
+        <div class="bs-example">
+          <div class="alert alert-info">
+            <strong>Heads up!</strong> This alert needs your attention, but it's not super important. This
+            <a href="<%= alert.link %>" class="alert-link">alert needs your attention</a>, but it's not super important.
+          </div>
+        </div>
+      </section>
+
       <!-- Related -->
 
       <!-- page -->
@@ -178,6 +196,11 @@
         <!-- page -->
         <ul class="nav nav-pills nav-stacked">
           <li> <a href="alert-04.html">alert-danger</a> </li>
+        </ul>
+
+        <!-- page -->
+        <ul class="nav nav-pills nav-stacked">
+          <li> <a href="alert-05.html">alert-info</a> </li>
         </ul>
       </div>
     </div>

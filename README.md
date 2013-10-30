@@ -24,25 +24,34 @@ If you have any problems, please [let us know](https://github.com/assemble/examp
 ## Examples
 ### Basic pager
 
-* "prev" and "next" buttons
+* `prev` and `next` buttons
 * above content
-* "justified" style
+* `justified` style
 
 ![image](https://f.cloud.github.com/assets/383994/1435768/d33bf88a-4147-11e3-969f-97d30028d61b.png)
 
-* "prev" and "next" buttons
+***
+
+### Pill style
+
+* `prev` and `next` buttons
 * below content
 * pill style
 
 ![image](https://f.cloud.github.com/assets/383994/1435770/e696a4de-4147-11e3-9071-9f19690cbadb.png)
 
+***
 
-* "prev" and "next" buttons
+### Numbered
+
+* `prev` and `next` buttons
 * pill style
 * numbered
 * option to limit numbers, e.g: `{{paginate pagination limit="5"}}`
 
 ![image](https://f.cloud.github.com/assets/383994/1435777/f6a4bdd4-4147-11e3-96cf-7e7940c8bbae.png)
+
+***
 
 ![image](https://f.cloud.github.com/assets/383994/1435780/074b1da4-4148-11e3-8a7b-fd14664fa00e.png)
 

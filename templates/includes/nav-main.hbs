@@ -7,10 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="index.html" class="navbar-brand">{{site.title}}</a>
+      <a href="{{relative page.dest "_gh_pages/./index.html"}}" class="navbar-brand">{{site.title}}</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav navbar-right">
+        <li{{#is slug "about"}} class="active"{{/is}}>
+          <a href="{{relative page.dest "_gh_pages/./license.html"}}">License</a>
+        </li>
         <li{{#is slug "about"}} class="active"{{/is}}>
           <a href="{{relative page.dest "_gh_pages/./about.html"}}">About</a>
         </li>

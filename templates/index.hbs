@@ -1,11 +1,10 @@
 ---
-title: Home
+layout: default
 ---
-{{#each pages}}
-  <!-- page -->
-  {{#isnt this.basename "index"}}
-    {{#include}}
-      {{{page}}}
-    {{/include}}
-  {{/isnt}}
-{{/each}}
+<section class="docs-section">
+  <div class="list-group">
+    <a class="list-group-item" href="01/index.html">Blog Example</a>
+    <a class="list-group-item" href="02/index.html">Alternate Blog Example</a>
+    <a class="list-group-item" href="03/index.html">Components Example</a>
+  </div>
+</section>

@@ -15,7 +15,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     site : grunt.file.readYAML('_config.yml'),
-    posts: grunt.file.readJSON('example-blog/posts.json'),
+    posts: grunt.file.readJSON('01/posts.json'),
 
 
     /**
@@ -34,27 +34,30 @@ module.exports = function(grunt) {
         data: ['data/**/*.json'],
         postprocess: pretty
       },
-      blog: {
-        files: {'_gh_pages/example-blog/': ['example-blog/index.hbs']},
+      blog01: {
+        files: {'_gh_pages/01/': ['01/index.hbs']},
         options: {
-          layout: 'blog',
           pages: '<%= posts.archives %>',
-          data: 'example-blog/*.json'
+          data: '01/*.json',
+          layout: 'blog',
         }
       },
-      blog2: {
-        files: {'_gh_pages/example-blog-2/': ['example-blog-2/index.hbs']},
+      blog02: {
+        files: {'_gh_pages/02/': ['02/index.hbs']},
         options: {
-          layout: 'blog',
           pages: '<%= posts.archives %>',
-          data: 'example-blog-2/*.json'
+          data: '02/*.json',
+          layout: 'blog'
         }
       },
-      components: {
-        files: {'_gh_pages/example-components/': ['example-components/index.hbs', 'example-components/alert-*.hbs']},
+      components03: {
+        files: {'_gh_pages/03/': ['03/index.hbs', '03/alert-*.hbs']},
         options: {
-          data: ['example-components/*.json']
+          data: ['03/*.json']
         }
+      },
+      index: {
+        files: {'_gh_pages/': ['templates/*.hbs']}
       }
     },
 
@@ -75,11 +78,10 @@ module.exports = function(grunt) {
           imports: {reference: ['theme/theme.less']}
         },
         files: [
-          {expand: true, src: ['example-*/*.less'], dest: '_gh_pages/', ext: '.css'}
+          {expand: true, src: ['0*/*.less'], dest: '_gh_pages/', ext: '.css'}
         ]
       }
     },
-
 
     jshint: {
       options: {jshintrc: '.jshintrc', },
@@ -96,6 +98,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble-less');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-sync-pkg');
 
   // Default task to be run.
   grunt.registerTask('default', ['clean', 'jshint', 'less', 'assemble']);

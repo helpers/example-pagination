@@ -1,41 +1,50 @@
-# pagination
+# example-pagination [![NPM version](https://badge.fury.io/js/boilerplate-docs.png)](http://badge.fury.io/js/boilerplate-docs)
 
-> Examples for implementing pagination with Assemble.
+> Examples for adding pagination to your Assemble projects.
 
-Not ready yet, this is a work in progress. Please star to follow progress!
+## Getting started
+
+### Download the project
+
+Do _one_ of the following:
+
+* **[download][download]** this project,
+* `git clone https://github.com/assemble/example-pagination.git`
+* `bower install example-pagination`
+
+### Build
+After you download the project, in the command line:
+
+* run `npm install` to install of the project's dependencies.
+* run `grunt` to build the project.
+
+If you have any problems, please [let us know](https://github.com/assemble/example-pagination/issues/new).
 
 
 ## Examples
+### Basic pager
 
-This is a rough outline of what is planned, but it can change as we go along.
+* "prev" and "next" buttons
+* above content
+* "justified" style
 
-### 000
+![image](https://f.cloud.github.com/assets/383994/1435768/d33bf88a-4147-11e3-969f-97d30028d61b.png)
 
-Example of using built-in pagination variables added directly to HTML, without helpers.
+* "prev" and "next" buttons
+* below content
+* pill style
 
-### 010
+![image](https://f.cloud.github.com/assets/383994/1435770/e696a4de-4147-11e3-9071-9f19690cbadb.png)
 
-Basic of using a {{> pagination }} partial
 
-### 020
+* "prev" and "next" buttons
+* pill style
+* numbered
+* option to limit numbers, e.g: `{{paginate pagination limit="5"}}`
 
-Example of using a pagination helper
+![image](https://f.cloud.github.com/assets/383994/1435777/f6a4bdd4-4147-11e3-96cf-7e7940c8bbae.png)
 
-### 030
-
-Example of simple "paging", which includes only the "next" and "previous" buttons
-
-### 040
-
-Example of numbered pagination
-
-### 050
-
-Exmample of a page of pages using Assemble variables.
-
-### 060
-
-Exmample of a page of pages using helpers.
+![image](https://f.cloud.github.com/assets/383994/1435780/074b1da4-4148-11e3-8a7b-fd14664fa00e.png)
 
 
 ## Contributing

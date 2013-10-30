@@ -3,10 +3,9 @@ dest: _gh_pages
 
 
 # Site metadata
-title: Bootstrap Components
+title: Example Pagination
 lead: false
-description: >
-  Templates and data for Bootstrap's components.
+description: Pagination examples for Assemble
 
 # License info
 license:
@@ -16,7 +15,7 @@ license:
 
 # URLs
 blog: http://assemble.io/blog/
-repo: https://github.com/upstage/bootstrap-templates
+repo: https://github.com/assemble/example-pagination
 download:
   source: <%= site.repo %>/archive/master.zip
 
@@ -29,14 +28,14 @@ google:
 
 # Comments
 disqus:
-  shortname: bootstrap-templates
+  shortname: assemble-example-pagination
 
 
 # Social
 social:
   twitter:
     via: jonschlinkert
-    username: upstageio
+    username: assemble
   facebook: false
   gplus: false
   hn: false
@@ -50,5 +49,4 @@ social:
   gplus: false
   hn: false
   google: false
-
 

@@ -1,9 +1,20 @@
 ---
-layout: templates/layouts/default.hbs
+layout: default
+width: <%= posts.width %>px
+styles: <%= posts.styles %>
 ---
+<style>
+.container {
+  max-width: {{width}};
+}
+</style>
+
 <!-- Pagination -->
 {{pager pagination modifier="pager-justified"}}
 
 <!-- Blog Posts -->
 {{> body }}
+
+<!-- Pagination -->
+{{pager pagination}}
 

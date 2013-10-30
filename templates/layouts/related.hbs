@@ -1,0 +1,18 @@
+---
+layout: component
+---
+{{> body }}
+
+<h2>Related</h2>
+<!-- page -->
+{{#each pages}}
+  {{#isnt this.basename ../page.basename}}
+    {{#isnt this.basename 'index'}}
+      <ul class="nav nav-stacked">
+      {{#include}}
+        <li><a href="{{relative ../../../../page.dest this.dest}}">{{{data.title}}}</a></li>
+      {{/include}}
+      </ul>
+    {{/isnt}}
+  {{/isnt}}
+{{/each}}

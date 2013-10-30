@@ -1,0 +1,17 @@
+---
+layout: blog
+poster: <%= posts.poster %>
+---
+<article class="post post-item">
+  {{{poster}}}
+  <div class="post-body">
+    <h1 class="post-heading">{{title}}</h1>
+    {{> body }}
+  </div>
+  <div class="post-footer">
+    <!-- social links, sharing, related links etc -->
+  </div>
+</article>
+
+<!-- Comments -->
+{{> disqus }}

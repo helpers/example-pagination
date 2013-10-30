@@ -1,0 +1,46 @@
+---
+title: My Blog
+layout: default
+width: <%= posts.width %>px
+thumbnail: <%= posts.thumbnail.right %>
+styles: <%= posts.styles %>
+---
+<style>
+.container {
+  max-width: {{width}};
+}
+</style>
+
+<!-- Pagination -->
+{{pager pagination modifier="pager-justified"}}
+
+<section class="posts">
+{{#each pages}}
+  {{#isnt this.basename "index"}}
+    {{#include}}
+    <!-- Post -->
+    <article class="post post-item">
+      <a href="{{relative ../../../page.dest this.dest}}">
+        {{{data.thumbnail}}}
+      </a>
+      <div class="post-body">
+        <a href="{{relative ../../../page.dest this.dest}}"><h2 class="post-heading">{{{data.title}}}</h2></a>
+        {{{data.summary}}}
+      </div>
+      <div class="post-footer">
+        <a href="{{relative ../../../page.dest this.dest}}">Read More...</a>
+      </div>
+    </article>
+    {{/include}}
+  {{/isnt}}
+{{/each}}
+</section>
+
+
+<!-- Pagination -->
+{{pager pagination}}
+
+
+<section class="comments">
+  {{> disqus }}
+</section>

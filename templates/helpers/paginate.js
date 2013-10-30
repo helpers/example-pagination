@@ -25,7 +25,7 @@ module.exports.register = function (Handlebars, options, params) {
    * @param  {Object} options Pass a modifier class to the helper.
    * @return {String}         The pager, HTML.
    */
-  Handlebars.registerHelper('paginate', function(context, options) {
+  Handlebars.registerHelper('paginate', function(context, modifier, options) {
 
     options = options || {};
     options.hash = options.hash || {};
